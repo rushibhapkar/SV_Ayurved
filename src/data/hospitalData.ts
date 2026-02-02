@@ -64,25 +64,48 @@ export const specialties: Specialty[] = [
     icon: 'Bone'
   }
 ];
-
 export const visitSchedule: VisitSchedule[] = [
+  {
+    city: 'Nasrapur (Main Branch)',
+    schedule: 'Daily 10.00 to 2.00, 5.00 to 7.00 (Wednesday Closed)',
+    address: 'Shri Vishwhambhar Ayurvediya Chikitsalaya, Nr. PDCC Bank, Cheladi Stop, Nasrapur, Tal - Bhor, Dist - Pune 412213.'
+  },
   {
     city: 'Dhankawadi, Pune',
     schedule: 'Every 1st Saturday Evening 6.30 to 8.30',
-    address: 'Manas Hospital, 33 Behind Printing Point, PICT College to Icchapurti Ganesh Mandir Road, Chandrabhaga Nagar, Behind Bharati Vidyapeeth, Dhankawadi, Pune, Maharashtra 411046.'
+    address: 'C/o Manas hospital, 33, behind printing point, PICT COLLEGE TO ICCHAPURTI GANESH MANDIR ROAD, Chandrabhaga Nagar, BEHIND BHARATI VIDYAPITH, Dhankawadi, Pune, Maharashtra 411046.'
   },
   {
     city: 'Aundh, Pune',
-    schedule: 'Every 1st Saturday 3.00 to 5.00',
-    address: 'Ayuriva Polyclinic and Panchakarma Centre, Shree Sneh Apartment Flat 101, Sr No 13/1/5, Spicer College Road, Near Kohinoor Planet Aundh.'
+    schedule: 'Every 1st Saturday 2.30 to 4.30',
+    address: 'Ayuriva Polyclinic and Panchakarma centre, Shree Sneh Apartment Flat 101, Sr No 13/1/5, Spicer College Road, Near Kohinoor Planet Aundh.'
   },
   {
-    city: 'Nagpur',
-    schedule: 'Every 2nd Friday of the month',
-    address: 'Healing Roots Clinic, Dharampeth, Nagpur - 440010'
+    city: 'Bhor',
+    schedule: 'Every 2nd Saturday 12.00 to 2.00',
+    address: 'C/o Sahyadri hospital, Near Shirke wines, Bhor.'
+  },
+  {
+    city: 'Shirwal',
+    schedule: 'Every 2nd Saturday 5.00 to 7.00',
+    address: 'SGM Multispeciality Hospital, Near Kamala Mehta Eye Hospital, Shirwal, Maharashtra 412801.'
+  },
+  {
+    city: 'Kolhapur',
+    schedule: 'Every 3rd Saturday 12.00 to 2.00',
+    address: 'Mitram Ayurved and Panchakarma Center, Y P Powar Nagar, Plot No. 137, Near Amrut Dairy, Kolhapur, Maharashtra 416001.'
+  },
+  {
+    city: 'Ahilya Nagar',
+    schedule: 'Every 4th Saturday 11.30 to 1.30',
+    address: 'C/O Sundar Netralaya, Dr. Gore Hospital, Chitale Rd, Chaupati Karanja, Near Delhi Gate, Nalegaon, Ahilya Nagar, Maharashtra 414001.'
+  },
+  {
+    city: 'Shikrapur',
+    schedule: 'Every 4th Saturday 4.00 to 6.00',
+    address: 'Shop no. 2, Opp. State Bank, Pabal chowk, Shikrapur, Pabal Phata, Busy Bazar Chowk, Pune, Maharashtra 412208.'
   }
 ];
-
 export const galleryMedia: GalleryMedia[] = [
   { id: 1, type: 'photo', url: img1, title: 'Initial Assessment', description: 'Customized Prakriti analysis to identify root causes of weight gain.' },
   { id: 2, type: 'photo', url: img2, title: 'Metabolic Balance', description: 'Integrating Ayurvedic herbs to naturally boost Agni.' },

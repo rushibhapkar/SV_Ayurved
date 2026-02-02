@@ -105,3 +105,38 @@
     animation-delay: 300ms;
   }
 }
+@layer utilities {
+  /* ... your existing animations ... */
+
+  /* Independent scroll fix: prevents the whole page from bouncing/scrolling 
+     when you reach the end of the popup content */
+  .overscroll-contain {
+    overscroll-behavior: contain;
+  }
+
+  /* Custom Professional Scrollbar - Elegant & Thin */
+  /* This will only apply to elements with the 'custom-scrollbar' class */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #e5e7eb; /* Light gray */
+    border-radius: 20px;
+    border: 1px solid transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #10b981; /* Ayurvedic Green */
+  }
+
+  /* Smooth scrolling for internal containers */
+  .scroll-smooth-container {
+    -webkit-overflow-scrolling: touch; /* Butter smooth scroll for iOS */
+    scroll-behavior: smooth;
+  }
+}
