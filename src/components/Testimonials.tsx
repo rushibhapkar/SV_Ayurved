@@ -9,7 +9,7 @@ const Testimonials = () => {
   // const videos = galleryMedia.filter(item => item.type === 'video');
 
   return (
-    <section id="testimonials" className="py-20 px-4 bg-white">
+    <section id="testimonials" className="py-20 px-4 bg-gray-50/50">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">
@@ -21,112 +21,96 @@ const Testimonials = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto rounded-full mt-4"></div>
         </div>
 
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-800 mb-8">Treatment Gallery</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-green-500 pl-4">
+            Treatment Gallery
+          </h3>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {photos.map((photo, index) => (
               <div
                 key={photo.id}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                className="group relative bg-white p-2 rounded-2xl shadow-sm ring-1 ring-gray-200/60 hover:ring-green-500/50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
                 style={{
                   animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
                 }}
               >
-                <img
-                  src={photo.url}
-                  alt={photo.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
-                  <h4 className="text-xl font-bold text-white mb-2">{photo.title}</h4>
-                  <p className="text-green-100 text-sm">{photo.description}</p>
+                {/* Image Container with inner border */}
+                <div className="relative overflow-hidden rounded-xl h-64 border border-gray-100">
+                  <img
+                    src={photo.url}
+                    alt={photo.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                    loading="lazy"
+                  />
+                  
+                  {/* Glassmorphism Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                    <h4 className="text-xl font-bold text-white mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      {photo.title}
+                    </h4>
+                    <p className="text-green-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                      {photo.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-800 mb-8">Patient Testimonials</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videos.map((video, index) => (
-              <div
-                key={video.id}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer"
-                style={{
-                  animation: `fadeInUp 0.6s ease-out ${index * 0.15}s both`
-                }}
-                onClick={() => setSelectedVideo(video.url)}
-              >
-                <img
-                  src={video.thumbnail}
-                  alt={video.title}
-                  className="w-full h-64 object-cover group-hover:brightness-75 transition-all duration-300"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/60 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <Play className="text-white fill-white" size={28} />
-                  </div>
-                </div>
-
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <h4 className="text-lg font-bold text-white mb-1">{video.title}</h4>
-                  <p className="text-green-200 text-sm">{video.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
-
+        {/* Join Community Section */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl p-8 md:p-12 shadow-2xl">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="bg-gradient-to-br from-green-600 to-green-800 text-white rounded-[2rem] p-8 md:p-14 shadow-2xl relative overflow-hidden">
+            {/* Background Decorative Element */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+            
+            <h3 className="text-3xl md:text-5xl font-bold mb-6 relative z-10">
               Join Our Growing Community
             </h3>
-            <p className="text-lg md:text-xl mb-8 text-green-50 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl mb-10 text-green-50 max-w-3xl mx-auto relative z-10 opacity-90">
               Thousands of patients have experienced transformative healing through our Ayurvedic treatments
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <div className="bg-white/20 backdrop-blur-sm px-6 py-4 rounded-xl">
-                <p className="text-3xl font-bold">98%</p>
-                <p className="text-green-50 text-sm">Patient Satisfaction</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm px-6 py-4 rounded-xl">
-                <p className="text-3xl font-bold">5000+</p>
-                <p className="text-green-50 text-sm">Lives Changed</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm px-6 py-4 rounded-xl">
-                <p className="text-3xl font-bold">15+</p>
-                <p className="text-green-50 text-sm">Years Experience</p>
-              </div>
+            
+            <div className="flex flex-wrap gap-4 md:gap-8 justify-center relative z-10">
+              <StatCard value="98%" label="Patient Satisfaction" />
+              <StatCard value="5000+" label="Lives Changed" />
+              <StatCard value="15+" label="Years Experience" />
             </div>
           </div>
         </div>
       </div>
 
+      {/* Video Modal remains the same but with better backdrop */}
       {selectedVideo && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn">
-          <div className="relative w-full max-w-4xl">
+        <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-[100] flex items-center justify-center p-4">
+          <div className="relative w-full max-w-5xl aspect-video shadow-2xl">
             <button
               onClick={() => setSelectedVideo(null)}
-              className="absolute -top-12 right-0 text-white hover:text-green-400 transition-colors"
+              className="absolute -top-14 right-0 text-white hover:text-green-400 p-2 transition-all hover:rotate-90"
             >
-              <X size={32} />
+              <X size={40} />
             </button>
-            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-              <iframe
-                src={selectedVideo}
-                title="Patient Testimonial"
-                className="absolute inset-0 w-full h-full rounded-2xl"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
+            <iframe
+              src={selectedVideo}
+              title="Patient Testimonial"
+              className="w-full h-full rounded-2xl border-2 border-white/10"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       )}
     </section>
   );
 };
+
+// Helper Component for Stats
+const StatCard = ({ value, label }: { value: string; label: string }) => (
+  <div className="bg-white/10 backdrop-blur-md px-8 py-5 rounded-2xl border border-white/20 hover:bg-white/20 transition-colors">
+    <p className="text-4xl font-black mb-1">{value}</p>
+    <p className="text-green-100 text-xs uppercase tracking-widest font-bold">{label}</p>
+  </div>
+);
 
 export default Testimonials;
