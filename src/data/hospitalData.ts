@@ -7,6 +7,15 @@ import img3 from '../assets/img3.jpeg';
 import img4 from '../assets/img4.jpeg';
 import img5 from '../assets/img5.jpeg';
 import img6 from '../assets/img6.jpeg';
+import th1 from '../assets/th1.jpeg';
+import th2 from '../assets/th2.jpeg';
+import th3 from '../assets/th3.jpeg';
+import th4 from '../assets/th4.jpeg';
+import th5 from '../assets/th5.jpeg';
+import th6 from '../assets/th6.jpeg';
+
+
+
 import dr from '../assets/dr.png';
 
 export const doctorData: Doctor = {
@@ -116,25 +125,49 @@ export const galleryMedia: GalleryMedia[] = [
   {
     id: 7,
     type: 'video',
-    url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    title: 'Patient Success Story',
-    description: 'Watch how Ayurveda transformed lives',
-    thumbnail: img1 // Use local image for faster loading
+    url: 'https://www.youtube.com/embed/Etse4UbjJMw',
+    title: 'Fat Loss Success',
+    description: 'Patient lost 5.7kg and 8.5cm waist circumference in just 21 days.',
+    thumbnail: th1
   },
   {
     id: 8,
     type: 'video',
-    url: 'https://www.youtube.com/embed/jNQXAC9IVRw',
-    title: 'Treatment Process',
-    description: 'Learn about our Ayurvedic treatment methods',
-    thumbnail: img2
+    url: 'https://www.youtube.com/embed/vukNVikU4FU',
+    title: 'Metabolic Reset',
+    description: 'Patient lost 4.4kg  in just 15 days.',
+    thumbnail: th2
   },
   {
     id: 9,
     type: 'video',
-    url: 'https://www.youtube.com/embed/9bZkp7q19f0',
-    title: 'Wellness Tips',
-    description: 'Daily Ayurvedic practices for better health',
-    thumbnail: img3
+    url: 'https://www.youtube.com/embed/PK2NIbAAjqc',
+    title: 'Natural Detox',
+    description: 'Experience the power of Panchakarma for healthy weight loss.',
+    thumbnail: th3
+  },
+  {
+    id: 10,
+    type: 'video',
+    url: 'https://www.youtube.com/embed/eHVUtduNg_4',
+    title: 'Lifestyle Correction',
+    description: 'Understanding the root cause of obesity through Ayurveda.',
+    thumbnail: th4
+  },
+  {
+    id: 11,
+    type: 'video',
+    url: 'https://www.youtube.com/embed/mi35Res8XCQ',
+    title: 'Panchakarma Results',
+    description: 'Real patient journey: Detoxification and body composition change.',
+    thumbnail: th5
+  },
+  {
+    id: 12,
+    type: 'video',
+    url: 'https://www.youtube.com/embed/hbtIc2iro0E',
+    title: 'Weight Maintenance',
+    description: 'Daily Ayurvedic habits to prevent weight regain after treatment.',
+    thumbnail: th6
   }
 ];
