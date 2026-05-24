@@ -21,23 +21,18 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-white relative">
+      <div className="min-h-screen bg-white">
         <Header onBookAppointment={() => setIsAppointmentModalOpen(true)} />
 
         <Routes>
-          {/* Main Website Content */}
           <Route path="/" element={
             <>
-              <DraggableWhatsApp />
-
               <Hero onBookAppointment={() => setIsAppointmentModalOpen(true)} />
               <Profile />
               <Specialties />
               <Testimonials />
             </>
           } />
-
-          {/* Fallback 404 Route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
 
@@ -49,8 +44,9 @@ function App() {
         />
       </div>
 
-      {/* 🌟 WHATSAPP CTA MOVED HERE & ELEVATED TO Z-[100] 🌟 */}
- 
+      {/* WhatsApp outside scrollable div — fixes mobile scroll block */}
+      <DraggableWhatsApp />
+
     </Router>
   );
 }

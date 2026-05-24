@@ -118,8 +118,10 @@ export default function DraggableWhatsApp() {
 
     const onMouseMove = (e: MouseEvent) => move(e.clientX, e.clientY);
     const onMouseUp = (e: MouseEvent) => stopDrag(e.clientX, e.clientY);
-    const onTouchMove = (e: TouchEvent) => { e.preventDefault(); move(e.touches[0].clientX, e.touches[0].clientY); };
-    const onTouchEnd = (e: TouchEvent) => stopDrag(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+const onTouchMove = (e: TouchEvent) => { 
+  if (dragging) e.preventDefault();  // ← only block when dragging the button
+  move(e.touches[0].clientX, e.touches[0].clientY); 
+};    const onTouchEnd = (e: TouchEvent) => stopDrag(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
 
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
