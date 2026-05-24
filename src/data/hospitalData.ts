@@ -13,6 +13,12 @@ import th3 from '../assets/th3.jpeg';
 import th4 from '../assets/th4.jpeg';
 import th5 from '../assets/th5.jpeg';
 import th6 from '../assets/th6.jpeg';
+import th7 from "../assets/th7.jpeg";
+import th8 from "../assets/th8.jpeg";
+import th9 from "../assets/th9.png";
+import th10 from "../assets/th10.png"
+
+
 
 
 
@@ -122,8 +128,16 @@ export const galleryMedia: GalleryMedia[] = [
   { id: 4, type: 'photo', url: img4, title: 'Sustainable Progress', description: '3-month milestone achieving healthy BMI through lifestyle correction.' },
   { id: 5, type: 'photo', url: img5, title: 'Tone & Vitality', description: 'Improvement in muscle tone and energy levels.' },
   { id: 6, type: 'photo', url: img6, title: 'Full Transformation', description: 'Successful weight recovery and long-term maintenance achievement.' },
+  { id: 7, type: 'photo', url: th7, title: 'Holistic Healing', description: 'Complete rejuvenation and alignment of Doshas for overall wellness.' },
+{ 
+  id: 8, 
+  type: 'photo', 
+  url: th8, 
+  title: 'Patient Gratitude Note', 
+  description: 'A heartfelt thank-you letter detailing their life-changing weight loss journey and newfound energy.' 
+},
   {
-    id: 7,
+    id: 9,
     type: 'video',
     url: 'https://www.youtube.com/embed/Etse4UbjJMw',
     title: 'Fat Loss Success',
@@ -131,15 +145,15 @@ export const galleryMedia: GalleryMedia[] = [
     thumbnail: th1
   },
   {
-    id: 8,
+    id: 10,
     type: 'video',
     url: 'https://www.youtube.com/embed/vukNVikU4FU',
     title: 'Metabolic Reset',
-    description: 'Patient lost 4.4kg  in just 15 days.',
+    description: 'Patient lost 4.4kg in just 15 days.',
     thumbnail: th2
   },
   {
-    id: 9,
+    id: 11,
     type: 'video',
     url: 'https://www.youtube.com/embed/PK2NIbAAjqc',
     title: 'Natural Detox',
@@ -147,7 +161,7 @@ export const galleryMedia: GalleryMedia[] = [
     thumbnail: th3
   },
   {
-    id: 10,
+    id: 12,
     type: 'video',
     url: 'https://www.youtube.com/embed/eHVUtduNg_4',
     title: 'Lifestyle Correction',
@@ -155,7 +169,7 @@ export const galleryMedia: GalleryMedia[] = [
     thumbnail: th4
   },
   {
-    id: 11,
+    id: 13,
     type: 'video',
     url: 'https://www.youtube.com/embed/mi35Res8XCQ',
     title: 'Panchakarma Results',
@@ -163,11 +177,27 @@ export const galleryMedia: GalleryMedia[] = [
     thumbnail: th5
   },
   {
-    id: 12,
+    id: 14,
     type: 'video',
     url: 'https://www.youtube.com/embed/hbtIc2iro0E',
     title: 'Weight Maintenance',
     description: 'Daily Ayurvedic habits to prevent weight regain after treatment.',
     thumbnail: th6
+  },
+  {
+    id: 15,
+    type: 'video',
+    url: 'https://www.youtube.com/embed/s0dHepDdw2U',
+    title: 'Quick Dietary Tips',
+    description: 'Simple and effective Ayurvedic eating rules for dynamic fat loss.',
+    thumbnail: th9
+  },
+  {
+    id: 16,
+    type: 'video',
+    url: 'https://www.youtube.com/embed/OoA233nqX00',
+    title: 'Herbal Remedies',
+    description: 'Discover powerful daily herbs that naturally stimulate sluggish metabolism.',
+    thumbnail: th10
   }
 ];

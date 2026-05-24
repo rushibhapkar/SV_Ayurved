@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Play, X } from 'lucide-react';
-import { galleryMedia } from '../data/hospitalData';
+import { galleryMedia, } from '../data/hospitalData';
+import { GalleryMedia } from '../types';
 
 const Testimonials = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-
+  const [selectedPhoto, setSelectedPhoto] = useState<GalleryMedia | null>(null);
   const photos = galleryMedia.filter(item => item.type === 'photo');
   const videos = galleryMedia.filter(item => item.type === 'video');
 
@@ -31,15 +32,15 @@ const Testimonials = () => {
             {/* Increased column count to make cards smaller: 2 mobile, 4 tablet, 5 desktop */}
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
               {videos.map((video) => (
-                <div 
+                <div
                   key={video.id}
                   className="group relative cursor-pointer bg-white p-1.5 rounded-xl shadow-sm ring-1 ring-gray-200/60 hover:ring-green-500 transition-all duration-300 flex flex-col"
                   onClick={() => setSelectedVideo(video.url)}
                 >
                   <div className="relative aspect-[9/16] overflow-hidden rounded-lg bg-gray-100">
-                    <img 
-                      src={video.thumbnail} 
-                      alt={video.title} 
+                    <img
+                      src={video.thumbnail}
+                      alt={video.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors flex items-center justify-center">
@@ -67,7 +68,8 @@ const Testimonials = () => {
             {photos.map((photo) => (
               <div
                 key={photo.id}
-                className="group relative bg-white p-1.5 rounded-xl shadow-sm ring-1 ring-gray-200/60 hover:ring-green-500/50 transition-all duration-300 overflow-hidden"
+                onClick={() => setSelectedPhoto(photo)}
+                className="group relative bg-white p-1.5 rounded-xl shadow-sm ring-1 ring-gray-200/60 hover:ring-green-500/50 transition-all duration-300 overflow-hidden cursor-pointer"
               >
                 <div className="relative overflow-hidden rounded-lg h-48 md:h-64">
                   <img
@@ -103,7 +105,7 @@ const Testimonials = () => {
       {/* --- Video Modal --- */}
       {/* --- Enhanced Video Modal --- */}
       {selectedVideo && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 transition-all duration-500"
           onClick={() => setSelectedVideo(null)}
         >
@@ -122,13 +124,13 @@ const Testimonials = () => {
             <X size={28} />
           </button>
 
-          <div 
+          <div
             className="relative w-full max-w-[320px] md:max-w-[360px] aspect-[9/16] z-[105] group"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Outer Glow Effect around the phone frame */}
             <div className="absolute -inset-1 bg-gradient-to-b from-green-500/50 to-emerald-600/50 rounded-[2rem] blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-            
+
             <div className="relative w-full h-full bg-black rounded-[2rem] overflow-hidden border-[6px] border-gray-800 shadow-2xl">
               <iframe
                 src={selectedVideo}
@@ -144,6 +146,44 @@ const Testimonials = () => {
               Click anywhere to close
             </p>
           </div>
+        </div>
+      )}
+
+
+      {selectedPhoto && (
+        <div className='fixed inset-0 bg-black/80 z-50 flex flex-col items-center justify-center p-4 backdrop-blur-sm animate-fade-in'
+          onClick={() => setSelectedPhoto(null)}
+        >
+          {/* Content Wrapper */}
+          <div
+            className="relative max-w-3xl w-full bg-white p-2 rounded-2xl shadow-2xl flex flex-col mx-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* CLOSE BUTTON: Now responsive! */}
+            <button
+              className="absolute -top-12 right-2 md:-top-2 md:-right-12 text-white bg-black/40 hover:bg-black/60 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg transition-all"
+              onClick={() => setSelectedPhoto(null)}
+            >
+              ✕
+            </button>
+
+            <img
+              src={selectedPhoto.url}
+              alt={selectedPhoto.title}
+              className="w-full h-auto max-h-[60vh] md:max-h-[70vh] object-contain rounded-xl"
+            />
+
+            {/* Text Content */}
+            <div className="p-3 md:p-5 text-left">
+              <h4 className="text-base md:text-xl font-bold text-gray-900 mb-1">
+                {selectedPhoto.title}
+              </h4>
+              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                {selectedPhoto.description}
+              </p>
+            </div>
+          </div>
+
         </div>
       )}
     </section>

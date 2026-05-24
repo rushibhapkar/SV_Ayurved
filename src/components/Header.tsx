@@ -40,10 +40,14 @@ const Header = ({ onBookAppointment }: HeaderProps) => {
             <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg">
               <span className="text-white font-bold text-xl">आ</span>
             </div>
-            <div>
-              <h1 className="text-xl sm:text-1xl font-bold text-gray-800">Shri Vishwambhar Ayurvedic Chikitsalaya & Panchakarma Centre</h1>
-              <p className="text-xs sm:text-sm text-green-600">Traditional Wellness Center</p>
-            </div>
+            <div className="max-w-[200px] sm:max-w-xs md:max-w-none">
+  {/* Mobile: short name | Desktop: full name */}
+  <h1 className="font-bold text-gray-800 text-base sm:text-lg md:text-xl leading-tight">
+    <span className="sm:hidden">Shri Vishwambhar Ayurveda</span>
+    <span className="hidden sm:inline">Shri Vishwambhar Ayurvedic Chikitsalaya & Panchakarma Centre</span>
+  </h1>
+  <p className="text-xs text-green-600 font-medium mt-0.5">Traditional Wellness Center</p>
+</div>
           </div>
 
           <div className="hidden md:flex items-center gap-6">
